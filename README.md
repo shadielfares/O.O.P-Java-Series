@@ -67,10 +67,6 @@ Dependencies are defined in the `pom.xml` files located in each assignment direc
 
 Feel free to fork this repository, make your changes, and create a pull request. Contributions are always welcome!
 
-## License 📜
-
-This project is open-source and available under the [MIT License](LICENSE).
-
 ---
 
 Happy coding! 💻✨
