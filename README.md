@@ -1,5 +1,3 @@
-### README for O.O.P-Java-Series
-
 # O.O.P-Java-Series 🚀
 
 Welcome to the O.O.P-Java-Series repository! This series is designed to help you understand the concepts of Object-Oriented Programming (OOP) using Java. Follow the instructions below to set up and run the project.
