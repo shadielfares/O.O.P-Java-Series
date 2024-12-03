@@ -1,0 +1,43 @@
+Constructors is basically what does the instantiation of a class.
+
+If you do not have a constructor initalized within the class, then you cannot instantiate
+
+eg.
+
+class Person{
+	attributes...
+		public Person(){
+
+		}	
+}
+
+It is used to associate attributes with a class, but also can be used like this:
+
+Person p = new {Person}();
+
+If you expect a name in this code structure for example:
+
+class Person{
+	attributes..
+	public Person(String name){
+
+	}
+}
+
+Then calling instantiating with a constructor:
+
+	Person p = new Person (?) -  this will return an error, since expecting a variable name.
+
+Can choose to set a different constructor as well that removes the p.setname = ""
+eg:
+
+class Person{
+	attributes..
+	public Person(String name){
+
+	}
+	// This will allow a developer to instantiate it with or without a name
+	public Person(){
+
+	}
+}

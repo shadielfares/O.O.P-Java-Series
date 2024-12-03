@@ -1,0 +1,5 @@
+Anything defined with static, belongs to the class and primitive data types are like int, or double which cannot be instantiated as null.
+
+However since String is created from the String Object it is effectively a pointer and can be instantiated with null.
+
+String something; == null 
