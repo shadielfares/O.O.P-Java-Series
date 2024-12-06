@@ -3,15 +3,16 @@ package TicTacToe.domain;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Player {
+public class DynamicPlayer extends Player {
     private String name;
     private char piece;
     private boolean isComputer;
 
-    public Player(String name, char piece, boolean isComputer) {
+    public DynamicPlayer(String name, char piece, boolean isComputer) {
+        super(name, piece, isComputer);
         this.name = name;
-        this.piece = piece;
-        this.isComputer = isComputer;
+        this.piece= piece;
+        this.isComputer= isComputer;
     }
 
     public String getName() {
@@ -35,19 +36,21 @@ public class Player {
         return result;
     }
 
-    public int[] makeMove(Board board) {
+    public int[] makeMove(DynamicBoard board) {
+        //Get size of board
+            int N = board.sizeofBoard();
         if (isComputer) {
             Random random = new Random();
             int x, y;
             do {
-                x = random.nextInt(3);
-                y = random.nextInt(3);
+                x = random.nextInt(N);
+                y = random.nextInt(N);
             } while (!board.isCellEmpty(x, y));
             return new int[]{x, y};
         } else {
             try {
             Scanner scanner = new Scanner(System.in);
-            System.out.println(name + ", enter the x,y-coordinate pair between (0-2): ");
+            System.out.println(name + ", enter the x,y-coordinate pair between (0-"+ (N-1) +"):" );
             String xy = scanner.nextLine();
             String splitChar = "[,]";
             String[] position = xy.split(splitChar);

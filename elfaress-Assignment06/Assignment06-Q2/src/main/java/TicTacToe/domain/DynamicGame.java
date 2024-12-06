@@ -2,21 +2,30 @@ package TicTacToe.domain;
 
 import java.util.Scanner;
 
-public class Game {
-    private Board board;
-    private Player player1;
-    private Player player2;
+public class DynamicGame extends Game{
+    private DynamicBoard board;
+    private DynamicPlayer player1;
+    private DynamicPlayer player2;
 
-    public Game(Player player1, Player player2) {
-        this.board = new Board();
+    public DynamicGame(DynamicPlayer player1, DynamicPlayer player2) {
+        super(player1, player2);
+        this.board = new DynamicBoard();
         this.player1 = player1;
         this.player2 = player2;
     }
 
+    //Main Playing loop
+    @Override
     public void play() {
-        Player currentPlayer = player1;
+        DynamicPlayer currentPlayer = player1;
         boolean playing = true;
+        int N = board.sizeofBoard();
         while (playing) {
+            if (N < 3 || N > 20){
+                System.out.println("Fix size of board.");
+                break;
+            }
+
             board.drawBoard();
             System.out.println(currentPlayer.getName() + "'s turn. Piece: " + currentPlayer.getPiece());
 
@@ -47,11 +56,11 @@ public class Game {
         }
     }
 
+    //No Params, restarts game
     public boolean restart(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Would you like to play again: (y) Yes OR (n) No");
         String response = scanner.next();
-        scanner.close();
         while (true){
             if (response.equals("y")){
                 board.resetBoard();

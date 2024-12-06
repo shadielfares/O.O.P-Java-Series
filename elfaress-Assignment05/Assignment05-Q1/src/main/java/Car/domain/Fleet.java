@@ -11,7 +11,6 @@ public class Fleet {
 
     //Instantiate an array or list of Car objects that includes instances of GasolineCar and ElectricCar
 
-
     public Fleet() {
         cars = new ArrayList<>();
         cars.add(new GasolineCar("Toyota", "Corolla", "1234", "Red", 2010, 10, 100));
